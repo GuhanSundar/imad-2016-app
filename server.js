@@ -2,6 +2,21 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 
+var content = {
+    title: 'Article One | Guhan',
+    heading: 'Article One',
+    date : '14-09-1996',
+    content: `<p>
+                This is the new game i discovered!
+                Pretty Awesome!
+            </p>
+            <p> 
+                Future of racing
+            </p>`
+    
+};
+
+
 var app = express();
 app.use(morgan('combined'));
 
