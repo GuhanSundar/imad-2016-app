@@ -2,7 +2,7 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 
-var content = {
+var articleOne = {
     title: 'Article One | Guhan',
     heading: 'Article One',
     date : '14-09-1996',
@@ -16,8 +16,43 @@ var content = {
     
 };
 
+Function createTemplate(date){
+    var heading=data.heading;
+    var date=data.date;
+    varcontent=data.content;
+    
+var htmlTemplate =
+   ` <html>
+    <head>
+        <title>
+           $(heading)
+        </title>
+        <meta name="viewport" content="width=device-width, initia;-scale=1"/>
+        <link href="/ui/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div>
+            <a href="/">Home</a>
+        </div>
+        <hr/>
+   <div class="container">
+        <h3>    Article One  </h3>
+        <div> AG Drive </div>
+        <div>
+        <p>
+            $(date)
+        </p>
+           $(content)
+        </div>
+    </div>
+    </body>
+</html>`;
+
+returnHtmlTemplate;
+}
 
 var app = express();
+
 app.use(morgan('combined'));
 
 app.get('/', function (req, res) {
