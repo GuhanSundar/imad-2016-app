@@ -14,11 +14,11 @@ app.get('/alpha',function(req,res) {
 });
 
 app.get('/beta',function(req,res) {
-    res.send('Beta Requested to be served here')
+    res.sendFile(path.join(__dirname, 'ui', 'beta.html'));
 });
 
 app.get('/gamma',function(req,res) {
-    res.send('Gamma Requested to be served here')
+    res.sendFile(path.join(__dirname, 'ui', 'gamma.html'));
 });
 
 app.get('/ui/style.css', function (req, res) {
