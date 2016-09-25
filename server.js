@@ -43,7 +43,7 @@ articleThree: {
             </p>
             <p> 
                 Future of computing
-            </p>>`
+            </p>`
 }
 };
 
