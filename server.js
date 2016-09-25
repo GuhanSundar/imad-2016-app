@@ -2,6 +2,10 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 
+var app = express();
+app.use(morgan('combined'));
+
+
 var articleOne = {
     title: 'Article One | Guhan',
     heading: 'Article One',
@@ -13,19 +17,19 @@ var articleOne = {
             <p> 
                 Future of racing
             </p>`
-    
 };
 
-Function createTemplate(date){
-    var heading=data.heading;
-    var date=data.date;
-    varcontent=data.content;
-    
-var htmlTemplate =
-   ` <html>
+function createTemplate(data) {
+    var title = data.title;
+    var date = data.date;
+    var heading = data.heading;
+    var content = data.content;
+
+var htmlTemplate = `
+<html>
     <head>
         <title>
-           $(heading)
+            ${title}
         </title>
         <meta name="viewport" content="width=device-width, initia;-scale=1"/>
         <link href="/ui/style.css" rel="stylesheet" />
@@ -36,31 +40,24 @@ var htmlTemplate =
         </div>
         <hr/>
    <div class="container">
-        <h3>    Article One  </h3>
-        <div> AG Drive </div>
+        <h3>  ${heading}   </h3>
+        <div> ${date} </div>
         <div>
-        <p>
-            $(date)
-        </p>
-           $(content)
+            ${content}
         </div>
     </div>
     </body>
-</html>`;
-
-returnHtmlTemplate;
+</html>
+`;
+    return htmlTemplate;
 }
 
-var app = express();
-
-app.use(morgan('combined'));
-
 app.get('/', function (req, res) {
-  res.send(createTemplate(articleOne));
+  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 app.get('/alpha',function(req,res) {
-    res.sendFile(path.join(__dirname, '', 'article-one.html'));
+  res.send(createTemplate(articleOne));  
 });
 
 app.get('/beta',function(req,res) {
