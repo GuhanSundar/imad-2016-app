@@ -2,10 +2,10 @@ console.log('Loaded!');
 var element = document.getElementById('main-text');
 
 //CHanges the text of main Sectipn
-element.innerHTML = "Hasura";
+element.innerHTML = "Welcome";
 
 //Move the image
-var img = document.getElementById('madi');
+var img = document.getElementById('guhDP');
 var marginLeft=0;
 
 function moveRight () {
