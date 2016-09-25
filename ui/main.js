@@ -20,7 +20,7 @@ function moveLeft () {
 
 img.onclick = function() {
    var i=1;
-   if(i%2 === 0)
+   if(i++%2 === 0)
      var interval = setInterval(moveRight,20);
     else 
       var interval1 = setInterval(moveLeft,20);
